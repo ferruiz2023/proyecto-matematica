@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora</title>
+    <link rel="icon" href="logositio.png">
+
+    <link rel="stylesheet" href="style.css">
+<!--Este es el icono de la pagina que se coloca con un <link>-->
+<!--Con este link hemos mandado a llamar fuentes externas exclusivas para que si no las tienen descargadas, siempre las puedan ver-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+
+</head>
+<!--Por aca la seccion de estilo con css-->
+<style>
+/*AL BODY LE HEMOS APLICADO UN COLOR DE FONDO Y QUE CUBRA TODO*/
+    body{
+
+        background-color: rgb(87, 87, 131);
+
+        background-size: cover;
+
+    }
+/*AQUI, HEMOS DADO ESTILO AL <FORM>, QUE ES DONDE ESTA HECHA TODA LA CALCULADORA*/
+    form{
+        box-shadow: 1px 2px 10px 3px rgb(233, 233, 33); /*ESTO ES LA SOMBRE DE LA CALCULADORA*/
+
+        border-radius: 10px;
+
+        width: 350px;
+
+        height: 400px;
+
+        border: solid 2px black;
+
+        text-align: center;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+
+        margin: auto;
+
+        background-color: rgb(241, 196, 69);
+
+    }
+/*LA CAJA, ES DONDE SE MUESTRAN LOS RESULTADOS DE LOS NUMEROS, DONDE SE DIGITAN CADA UNO DE LOS BOTONES*/
+    #Caja{
+
+        box-shadow: inset 2px 2px 3px 4px gray;/*ESTA ES LA SOMBRA POR DENTRO DE LA CAJA*/
+
+        font-style: bold;
+
+        font-size: 70px;
+
+        font-family: 'Kranky';/*ESTA ES LA FUENTE QUE HEMOS MANDADO A LLAMAR EXTERNAMENTE*/
+
+        border-color: rgb(0, 0, 0);
+
+        width: 300px;
+
+        height: 70px;
+
+        background-color: rgb(196, 235, 222);
+
+    }
+/*ESTE INPUT SON TODOS LOS BOTONES QUE SE ENCUENTRAN EN LA CALCULADORA, HE INCLUSO, LA "CAJA" DONDE SE DIGITAN LOS NUMEROS*/
+    input{
+
+        box-shadow: 1px 1px 4px 1px grey;/*LA SOMBRE DE CADA UNO DE LOS BOTONES POR FUERA*/
+        font-style: bold;
+
+        height: 40px;
+
+        width: 60px;
+
+        font-size: 30px;
+
+        margin: 8px 0;
+
+        text-align: center;
+
+    }
+/*ESTA CLASE DE "NUMEROS" TOMA A TODOS CON EL NOMBRE DE ESA CLASE, EN ESTE CASO A TODOS LOS NUMEROS,
+POR LO QUE DA UN COLOR DIFERENTE A LOS DEMAS INPUT*/
+    .Numeros{
+
+        background-color: rgb(233, 215, 250);
+
+    }
+
+/*A LA TECLA BORRAR, REPRESENTADA POR UNA "C", TIENE UNA DIFERENCIA DE COLOR, EN ESTE CASO,
+ES UN TIPO DE ROJO*/
+    #tecla_borrar{
+
+        background-color: rgb(167, 42, 42);
+
+    }
+/*LA CLASE SIGNOS TOMA A TODOS LOS INPUT CON ESTA CLASE, PARA DAR UNA DIFERENCIA DE COLOR
+QUE ES VERDE CLAR, Y UNA FUENTE UN POCO MENOR, PARA QUE DE ESE ESTILO DE NO MUY BIEN ALINEADO
+EN LAS TECLAS*/
+    .Signos{
+
+        background-color: rgb(142, 182, 49);
+        font-size: 25px;
+
+    }
+/*EN ESTA CLASE DE NOMBRE, SIMPLEMENTE ES UN <H1>, DONDE DICE "CALCULATOR
+    Y OTRA VEZ UTILIZAMOS LA FUENTE EXTERNA*/  
+    .NOMBRE{
+        font-family: 'Kranky';
+        font-size: 60px;
+        background-color: rgb(226, 215, 215);
+    }
+/*COMO CADA TECLA TIENE SU ID, EN ESTE CASO PARA HACER UNA DIFERENCIA DE TAMAÑO,
+PARA HACERLO MAS GRANDE A LOS DEMAS, PARA HACERLOS MAS NOTABLES Y MAS FACIL DE TOCAR*/  
+    #tecla_igual{
+        width: 320px;
+        height: 50px;
+    }
+
+
+
+
+</style>
+
+
+<!--EN ESTA PARTE TENEMOS JAVASCRIPT-->
+<script>
+/*ESTA FUNCION SACA LA RAIZ CUADRADA DE LOS NUMEROS QUE DIGITEMOS
+SE EJECUTA AL DIGITAR UN NUMERO Y PRESIONAR LA TECLA DE RAIZ*/
+    function raizc() {
+
+        var r=document.getElementById("Caja").value;
+
+        var x=Math.sqrt(r)
+
+        calculadora.resultado.value=x;
+
+    }
+
+    
+/*ESTA FUNCION LA HEMOS DEJADO COMO UN SIMPLE COMENTARIO, YA QUE
+SOLO CUMPLE CON LA POTENCIA QUE NOSOTROS COLOQUEMOS EN EL CODIGO
+NO NOS PERMITE ELEVARLO A CUALQUIER NUMERO, MAS QUE AL QUE HEMOS COLOCADO
+EN EL CODICO COMO EXPONENTE*/
+
+    //function potencia(){
+        
+        //var p=document.getElementById("Caja").value;
+        
+        //var q=Math.pow(p,2)
+        
+        //calculadora.resultado.value=q;
+    //}
+
+    
+
+/*LA FUNCION QUE SACA EL COCENO DE LOS NUMEROS, IGUAMENTE, SE EJECUTA CUANDO DIGITAMOS UN NUMERO
+Y PRESIONAMOS LA TECLA "COS" Y NOS DA COMO RESULTADO EL COCENO DE ESE NUMERO*/
+
+    function coseno(){
+        var c=document.getElementById("Caja").value;
+        
+        var o=Math.cos(c)
+        
+        calculadora.resultado.value=o;
+    }
+
+/*LA FUNCION SENO, QUE SE EJECUTA CUANDO DIGITAMOS CUALQUIER NUMERO Y PRESIONAMOS LA TECLA
+"SEN" Y NOS DA COMO RESULTADO EL SENO DE EL NUMERO*/
+
+    function seno(){
+        var s=document.getElementById("Caja").value;
+        
+        var n=Math.sin(s)
+        calculadora.resultado.value=n;
+    }
+  
+
+/*LA FUNCION  TANGENTE, SE EJECUTA CUANDO DIGITAMOS UN NUMERO Y PRESIONAMOS LA TECLA DE "TAN"
+Y NOS DA COMO RESULTADO LA TANGENTE DE LOS NUMEROS*/
+
+    function Tangente(){
+        var t=document.getElementById("Caja").value;
+        
+        var e=Math.tan(t)
+        calculadora.resultado.value=e;
+    }
+
+    
+
+</script>
+<!--ESTE CENTER NOS CENTRA TODO LO QUE ESTA EN EL BODY-->
+<center>
+<body>
+    <header>
+		<ul class="navigation">
+			<li><a href="index project D y L.html">Inicio</a></li>
+			<li><a href="Teoria.html">Teoria</a></li>
+			<li><a href="Videos.html">Videos</a></li>
+			<li><a href="Material.html">Material</a></li>
+			<li><a href="Ejercicios.html">Ejercicios</a></li>
+			<li><a href="Calculadora L y H.html">Calculadora</a></li>
+		</ul>
+		<a href="index project D y L.html" class="logo"><img id="logositio" src="logositio.png"></a>
+	</header>
+
+    <div id="contenedorcalculator">
+<h1 class="NOMBRE"> Calculator</h1><br><br>
+
+
+    <form name="calculadora">
+
+        <input id="Caja" type="textfield" name="resultado" value="">
+
+        <br>
+<!--LA FUNCION ONCLIC HACE QUE SE DIGITEN LOS NUMEROS EN LA PANTALLA DE LA CALCULADORA QUE TIENE UN ID DE "CAJA"-->
+       <input class="Numeros" type="button" value="7" onClick="document.calculadora.resultado.value+='7'">
+
+       <input class="Numeros" type="button" value="8" onClick="document.calculadora.resultado.value+='8'">
+
+       <input class="Numeros" type="button" value="9" onClick="document.calculadora.resultado.value+='9'">
+
+       <input class="Signos" id="tecla_dividir" type="button" value="÷" onClick="document.calculadora.resultado.value+='/'">
+
+       <input class="Signos" id="tecla_raiz" type="button" value="√" onclick="raizc()"><!--ACA SE EJECUTA LA FUNCION DE RAIZ-->
+
+       <br>
+
+       <input class="Numeros" type="button" value="4" onClick="document.calculadora.resultado.value+='4'">
+
+       <input class="Numeros" type="button" value="5" onClick="document.calculadora.resultado.value+='5'">
+
+       <input class="Numeros" type="button" value="6" onClick="document.calculadora.resultado.value+='6'">
+
+       <input class="Signos" id="tecla_por" type="button" value="×" onClick="document.calculadora.resultado.value+='*'">
+       
+       <input class="Signos" id="tecla_potencia" type="button" name="pow" value="^" onClick="document.calculadora.resultado.value+='**'">
+<!--PARA EJECUTAR Y ELEVAR A LA POTENCIA HEMOS UTILIZADO EL DOBLE **, YA QUE JAVASCRIP LO LEE PARA ELEVAR A LA POTENCIA
+ESTO LO PODEMOS HACER PRESIONANDO DOS VECES LA TECLA DE MULTIPLICAR Y ELEVAR A CUALQUIER NUMERO, POR ESO NO UTILIZAMOS 
+LA FUNCION POTENCIA, YA QUE UTILIZAR ESTA METODO ES MEJOR-->
+
+       <br>
+
+       <input class="Numeros" type="button" value="1" onClick="document.calculadora.resultado.value+='1'">
+
+       <input class="Numeros" type="button" value="2" onClick="document.calculadora.resultado.value+='2'">
+
+       <input class="Numeros" type="button" value="3" onClick="document.calculadora.resultado.value+='3'">
+
+       <input class="Signos" id="tecla_menos" type="button" value="-" onClick="document.calculadora.resultado.value+='-'">
+       
+       <input class="Signos" id="tecla_coseno" type="button" value="Cos" onClick="coseno()">
+       <!--LA FUNCIO COCENO-->
+       
+
+       <br>
+
+       <input class="Numeros" id="Cero" type="button" value="0" onClick="document.calculadora.resultado.value+='0'">
+
+       <input id="tecla_borrar" type="reset" value="C">
+       <!--LA TECLA BORRAR, VUELVE A PONER TODAS LAS COSAS COMO AL PRINCIPIO-->
+       
+
+       <input class="Signos" id="tecla_mas" type="button" value="+" onClick="document.calculadora.resultado.value+='+'">
+       
+       <input class="Signos" id="tecla_seno" type="button" value="SE" onClick="seno()">
+       <!--LA FUNCION SENO-->
+       <input class="Signos" id="tecla_tangente" type="button" value="TA" onClick="Tangente()">
+       <!--LA FUNCION TANGENTE-->
+       <br>
+       
+       <input id="tecla_igual" type="button" value="=" onClick="document.calculadora.resultado.value=eval(document.calculadora.resultado.value)">
+       <!--LA TECLA IGUAL, QUE AL PRESIONAR NOS CALCULE LO QUE ESTAMOS PIDIENDO-->
+       
+
+    </form>
+
+</div>
+</body>
+</center>
+
+</html>

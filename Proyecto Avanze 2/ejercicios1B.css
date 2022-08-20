@@ -1,0 +1,36 @@
+/*Ejercicios numeros reales*/
+
+body{
+    background-color: #e90b4a;
+}
+.nombredetema span{
+    color: #e90b4a;
+    font-size: 50px;
+}
+.nombredetema{
+    font-size: 60px;
+    text-align: center;
+    background-color: rgb(245, 243, 84);
+}
+.ctorejercicios{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.ctorejercicios .ejercicio{
+    position: relative;
+	width: 48%;
+}
+
+.Indicacionesejercicios p span{
+    color: #e90b4a;
+    font-size: 30px;
+}
+
+.fondoejercicio a{
+    font-size: 25px;
+}
+
+
+/*fin de ejercicios numeros reales*/
